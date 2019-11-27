@@ -2,7 +2,7 @@ package com.accenture.lecture17;
 
 public class Cylinder extends Circle {
 
-	double height = 1.0;
+	private double height = 1.0;
 
 	public Cylinder() {
 
@@ -18,9 +18,9 @@ public class Cylinder extends Circle {
 	}
 
 	public Cylinder(double height, double radius, String color) {
+		super(radius, color);
 		this.height = height;
-		this.radius = radius;
-		this.color = color;
+		
 	}
 
 	public double getHeight() {

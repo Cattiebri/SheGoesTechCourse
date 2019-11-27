@@ -1,8 +1,8 @@
 package com.accenture.lecture17;
 
 public class Circle {
-	double radius = 1.0;
-	String color = "red";
+	protected double radius = 1.0;
+	protected String color = "red";
 
 	public Circle() {
 
