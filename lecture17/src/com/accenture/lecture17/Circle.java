@@ -1,15 +1,15 @@
 package com.accenture.lecture17;
 
 public class Circle {
-	protected double radius = 1.0;
-	protected String color = "red";
+	protected double radius;
+	protected String color;
 
 	public Circle() {
-
+		this(1.0);
 	}
 
 	public Circle(double radius) {
-		this.radius = radius;
+		this(radius, "red");
 	}
 
 	public Circle(double radius, String color) {
