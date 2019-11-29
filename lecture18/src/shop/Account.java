@@ -28,7 +28,8 @@ public class Account {
 	}
 
 	private int credit(int amount) {
-		return this.balance + amount;
+		this.balance = balance + amount;
+		return this.balance;
 	}
 
 	private int debit(int amount) {
@@ -44,7 +45,6 @@ public class Account {
 		if (amount <= this.balance) {
 			this.debit(amount);
 			another.credit(amount);
-			
 		} else {
 			System.out.println("Amount exceeded balance");
 		}
