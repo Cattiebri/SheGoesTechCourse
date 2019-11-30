@@ -38,19 +38,21 @@ public class WarriorApp {
 
 	}
 
-	public static void fightAll(List<Warrior> anyList) {
+	public static void fightAll(List<Warrior> warriorList) {
 		List<Warrior> losers = new ArrayList<>();
-		while (anyList.size() > 1) {
-			anyList.get(0).fight(anyList.get(anyList.size() - 1));
-			if (anyList.get(0).isAlive()) {
-				losers.add(anyList.get(anyList.size() - 1));
-				anyList.remove(anyList.get(anyList.size() - 1));
+		while (warriorList.size() > 1) {
+			int indexWarrior1 = 0;
+			int indexWarrior2 = warriorList.size() - 1;
+			warriorList.get(indexWarrior1).fight(warriorList.get(indexWarrior2));
+			if (warriorList.get(indexWarrior1).isAlive()) {
+				losers.add(warriorList.get(indexWarrior2));
+				warriorList.remove(warriorList.get(indexWarrior2));
 			} else {
-				losers.add(anyList.get(0));
-				anyList.remove(anyList.get(0));
+				losers.add(warriorList.get(indexWarrior1));
+				warriorList.remove(warriorList.get(indexWarrior1));
 			}
 		}
-		System.out.println("The final victory goes to " + anyList.get(0));
+		System.out.println("The final victory goes to " + warriorList.get(0));
 		System.out.println("These are the dead warriors: ");
 		for (Warrior warrior : losers) {
 			System.out.println(warrior.getName());
