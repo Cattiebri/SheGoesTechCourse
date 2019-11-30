@@ -34,7 +34,7 @@ public class Warrior {
 		return damagePower;
 	}
 
-	private boolean isAlive() {
+	public boolean isAlive() {
 		if (this.health > 0) {
 			return true;
 		} else {
